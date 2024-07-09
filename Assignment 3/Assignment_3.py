@@ -27,17 +27,16 @@ time.sleep(3)
 
 # Selecting a bicycle from the search results
 bicycle_link_1 = driver.find_element("xpath", "/html/body/div[1]/div/div/div/div[5]/div[2]/div/div[1]/span/div/div[3]/div/ul/li[1]/a/div/div/div[1]")
-bicycle_link_1.click()
+bicycle_link_1.location_once_scrolled_into_view
+time.sleep(2)
 
-# Waiting for the bicycle details page to load
-time.sleep(3)
+bicycle_link_1.click()  # Clicking bicycle link
+time.sleep(3)   # Waiting for the bicycle details page to load
 
 # Adding the bicycle to the cart
 add_to_cart_button = driver.find_element("id", "add-to-cart")
 add_to_cart_button.click()
-
-# Waiting for the cart to update
-time.sleep(5)
+time.sleep(5)   # Waiting for the cart to update
 
 # Clicking on continue button
 continue_button = driver.find_element("id", "continue-btn")
@@ -46,8 +45,10 @@ time.sleep(3)
 
 # selecting another bicycle
 bicycle_link_2 = driver.find_element("xpath", "/html/body/div[1]/div/div/div/div[9]/div/div/span/div/div/div[2]/div/div/div/div/div[6]/div/a/div/div/div[1]/img")
-bicycle_link_2.click()
+bicycle_link_2.location_once_scrolled_into_view
+time.sleep(2)
 
+bicycle_link_2.click()
 time.sleep(3)
 
 # Adding the bicycle to the cart
@@ -77,9 +78,16 @@ time.sleep(5)
 
 # proceed_to_checkout
 checkout_items = driver.find_element("xpath", "/html/body/div[1]/div/div/div/div[3]/div/div[1]/div[2]/div/div/span/div/div/div[4]/button")
+checkout_items.location_once_scrolled_into_view
+time.sleep(2)
 checkout_items.click()
 
 time.sleep(5)
 
 # Closing the webdriver
 driver.close()
+
+
+#           References
+#   Ruchika. (2024, July), Lab5. https://conestoga.desire2learn.com/d2l/le/content/1125703/Home
+#   ChatGPT 4, private communication, July 2024.
